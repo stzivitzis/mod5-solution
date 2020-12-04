@@ -1,0 +1,35 @@
+<div class="container">
+  <!-- <h2 id="my-info" class="text-center">My Info</h2> -->
+
+  <div id="user-info" ng-if="info.notSignedUp" class="error" >
+    <!-- Favourite dish: {{ reg.user.shortname}} <br>
+    {{reg.failMesage}} -->
+    <div class="text-center">
+      <h3> Not signed up yet!</h3>
+      <br>
+      <br>
+      <h2>
+        <a ui-sref="public.signup"> Sign Up!</a>
+      </h2>
+    </div>
+  </div>
+
+  <div id="user-info" ng-if="info.signedUp" class="text-center" >
+    <h2>Username: {{ info.userName}}</h2> <br>
+    Email: {{ info.email}} <br>
+    Phone: {{ info.phone}} <br>
+    Username: {{ info.userName}} <br> <br>
+    <h2>Favourite dish</h2>
+    {{info.name}}
+    <br>
+    {{info.description}}
+    <br>
+    <br>
+      <div id="user-info-fav-image" class="menu-item-photo">
+        <div>{{info.short_name}}</div>
+        <img class="img-responsive" width="250" height="150" ng-src="{{info.basePath}}/images/{{info.short_name}}.jpg" alt="{{$ctrl.menuItem.name}}">
+      </div>
+      <!-- <div class="menu-item-price">{{$ctrl.menuItem.price_small | currency}}<span> {{$ctrl.menuItem.small_portion_name}}</span> {{$ctrl.menuItem.price_large | currency}} <span>{{$ctrl.menuItem.large_portion_name}}</span></div> -->
+    </div>
+  </div>
+</div>
