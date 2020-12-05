@@ -5,21 +5,32 @@
 
           <form name='regForm' novalidate>
 
-            <input type="text" name="username" placeholder="Pick a username"
+            <input type="text" name="username" placeholder="Name"
               ng-model="reg.user.username"
               required
-              minlength="4"
-              ng-maxlength="10">
+              >
               <br>
               <span
-                ng-if="(regForm.username.$error.minlength || regForm.username.$error.required) && regForm.username.$touched">
-                Username must be at least 4 characters long
+                ng-if="(regForm.username.$error.required) && regForm.username.$touched">
+                Please provide name
               </span>
 
-              <span ng-if="regForm.username.$error.maxlength && regForm.username.$touched">
-                Username must not be longer than 10 characters
-              </span>
+
               <br>
+
+              <input type="text" name="surname" placeholder="Surname"
+                ng-model="reg.user.surname"
+                required
+                >
+                <br>
+                <span
+                  ng-if="(regForm.surname.$error.required) && regForm.surname.$touched">
+                  Please provide surname
+                </span>
+
+
+                <br>
+
             <input type="email" name="email" placeholder="Email"
               ng-model="reg.user.email"
               required>
