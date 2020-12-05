@@ -14,6 +14,7 @@ function InfoController(MenuService, ApiPath) {
   if(MenuService.savedUser){
     info.signedUp = true;
     info.userName = MenuService.savedUser.username;
+    info.surname = MenuService.savedUser.surname;
     info.email = MenuService.savedUser.email;
     info.phone = MenuService.savedUser.phone;
     info.short_name = MenuService.savedUser.favouriteDish.short_name;
